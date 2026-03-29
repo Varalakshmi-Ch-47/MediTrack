@@ -1,3 +1,13 @@
+The project execution steps are available here:  
+[How to Run](./howToRun.txt)
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
