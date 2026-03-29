@@ -1,5 +1,5 @@
 The project execution steps are available here:  
-[How to Run](./howToRun.txt)
+[How to Run](./howTorun.txt)
 
 
 
