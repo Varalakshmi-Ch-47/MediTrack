@@ -1,0 +1,32 @@
+# MediTrack Project Requirements
+
+## Core Environment
+- Node.js (v18 or higher recommended)
+- npm (v9 or higher recommended)
+- MongoDB (Running locally or on Atlas)
+
+## Frontend Dependencies (React)
+- react: ^19.2.0
+- react-dom: ^19.2.0
+- react-router-dom: ^7.13.1 (Role-based Routing)
+- axios: ^1.13.6 (API Client)
+- tailwindcss: ^3.4.19 (CSS Framework)
+- lucide-react: ^0.479.0 (Icons)
+- sweetalert2: ^11.26.22 (Alerts)
+- react-big-calendar: ^1.19.4 (Scheduler)
+- date-fns: ^4.1.0 (Date Management)
+
+## Backend Dependencies (Node.js/Express)
+- express: ^5.2.1 (Web Framework)
+- mongoose: ^9.3.0 (MongoDB ODM)
+- dotenv: ^17.3.1 (Environment Variables)
+- cors: ^2.8.6 (Cross-Origin Sharing)
+- bcryptjs: ^3.0.3 (Password Hashing)
+- jsonwebtoken: ^9.0.3 (Auth Tokens)
+- multer: ^2.1.1 (File Uploads)
+- cloudinary: ^1.41.3 (Image Hosting)
+- multer-storage-cloudinary: ^4.0.0 (Cloudinary Adapter)
+
+## Dev Tools
+- vite: ^7.3.1 (Frontend Build Tool)
+- nodemon: ^3.1.14 (Backend Auto-restart)

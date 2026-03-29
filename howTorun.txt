@@ -1,0 +1,86 @@
+MEDI-TRACK SETUP AND LOGIN GUIDE
+================================
+
+Below are the installation steps, core packages, and default credentials for the MediTrack application.
+
+PREREQUISITES
+-------------
+- Node.js: Installed on your system (LTS version recommended).
+- MongoDB: Installed and running locally. The default connection string is mongodb://127.0.0.1:27017/meditrack.
+
+CORE TECHNOLOGIES & PACKAGE INSTALLATION
+-----------------------------------------
+
+1. Backend (Express & Node.js)
+The backend is built using Express.js and Mongoose.
+To set up the backend from scratch, these packages were installed:
+   npm install express mongoose dotenv cors bcryptjs jsonwebtoken multer cloudinary multer-storage-cloudinary
+   npm install --save-dev nodemon
+
+- Express: Web framework for the API.
+- Mongoose: MongoDB object modeling.
+- JWT & Bcrypt: Authentication and password hashing.
+- Multer & Cloudinary: For handling medical record uploads.
+
+2. Frontend (React & Tailwind CSS)
+The frontend is built using Vite, React, and Tailwind CSS.
+To set up the frontend and styling:
+   # Core Dependencies
+   npm install react-router-dom axios sweetalert2 lucide-react react-big-calendar date-fns
+
+   # Tailwind CSS Installation
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+
+- React Router: For module-based routing and security.
+- Tailwind CSS: For the modern, responsive UI.
+- Axios: For API communication.
+- SweetAlert2: For user-friendly alerts and notifications.
+
+
+INSTALLATION AND SETUP STEP-BY-STEP
+-----------------------------------
+
+1. Backend Setup
+   a. Open a terminal in the 'backend' directory.
+   b. Install all dependencies:
+      npm install
+   c. Database Seeding: Populate the database:
+      node scripts/seedHospitals.js
+      node scripts/seedDoctors.js
+   d. Start the backend:
+      npm run dev
+
+2. Frontend Setup
+   a. Open a new terminal in the root 'meditrack' directory.
+   b. Install all dependencies:
+      npm install
+   c. Start the frontend:
+      npm run dev
+
+
+DEFAULT LOGIN CREDENTIALS
+-------------------------
+
+Use these credentials for testing the different modules:
+
+1. Admin Module
+   - URL: http://localhost:5173/admin
+   - Username: admin
+   - Password: admin123
+
+2. Hospital Module
+   - URL: http://localhost:5173/hospital/login
+   - Username: admin_general
+   - Password: hospital123
+
+3. Doctor Module
+   - URL: http://localhost:5173/doctor/login
+   - Doctor ID: DOC-001
+   - Password: doctor123
+
+4. Patient Module
+   - URL: http://localhost:5173/patient/login
+   - Action: Use the 'Register' link to create a new patient account.
+
+WARNING: These credentials are for development/testing ONLY.
