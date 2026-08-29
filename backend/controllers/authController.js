@@ -42,10 +42,12 @@ export const registerPatient = async (req, res) => {
       patientId: patient.patientId
     });
 
-  } catch (error) {
-    res.status(500).json({ message: "Registration failed" });
+    } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error.message });
   }
 };
+
 
 /* PATIENT LOGIN */
 
@@ -77,7 +79,7 @@ export const loginPatient = async (req, res) => {
       user: { ...patient.toObject(), role: "patient" }
     });
 
-  } catch (error) {
+    } catch (error) {
     res.status(500).json({ message: "Login failed" });
   }
 };
@@ -86,7 +88,7 @@ export const loginPatient = async (req, res) => {
 
 export const registerDoctor = async (req, res) => {
 
-  const { name, email, password, specialization, hospital } = req.body;
+  const { name, email, password, specialization, hospital, hospitalId } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -98,7 +100,8 @@ export const registerDoctor = async (req, res) => {
     email,
     password: hashedPassword,
     specialization,
-    hospital
+    hospital,
+    hospitalId
   });
 
   res.json({

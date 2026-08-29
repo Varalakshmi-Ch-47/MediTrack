@@ -13,7 +13,10 @@ const BookAppointmentPopup = ({ user, onClose, onBooked }) => {
   // Fetch registered doctors
   useEffect(() => {
     API.get("/auth/doctors")
-      .then((res) => setDoctorsList(res.data))
+      .then((res) => {
+        setDoctorsList(res.data);
+        if (res.data.length === 0) console.warn("No doctors found. Run: node scripts/seedDoctors.js");
+      })
       .catch((err) => console.log("Failed to fetch doctors:", err));
   }, []);
 
@@ -81,6 +84,7 @@ const BookAppointmentPopup = ({ user, onClose, onBooked }) => {
 
         <select
           className="w-full border p-2 rounded mb-2"
+          value={doctor}
           onChange={(e) => {
             const docName = e.target.value;
             setDoctor(docName);
@@ -92,7 +96,9 @@ const BookAppointmentPopup = ({ user, onClose, onBooked }) => {
             }
           }}
         >
-          <option value="">Select Doctor</option>
+          <option value="" disabled>
+            {doctorsList.length === 0 ? "No doctors available" : "Select Doctor"}
+          </option>
           {doctorsList.map((d) => (
             <option key={d._id} value={d.name}>
               {d.name} {d.specialization ? `(${d.specialization})` : ""}

@@ -8,7 +8,7 @@ import DashboardCards from "../../components/patient/DashboardCards";
 import UpcomingAppointments from "../../components/patient/UpcomingAppointments";
 import BookAppointmentPopup from "../../components/patient/BookAppointmentPopup";
 
-import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
+import { LogOut } from "lucide-react";
 import API from "../../api/axios";
 
 
@@ -92,7 +92,7 @@ const PatientHome = () => {
             className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow transition"
             title="Logout"
           >
-            <ArrowRightOnRectangleIcon className="h-6 w-6" />
+            <LogOut className="h-6 w-6" />
           </button>
 
         </div>
